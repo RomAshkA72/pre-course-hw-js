@@ -1,15 +1,25 @@
-let passportWithAddress = {
+let passportMarried = {
     name: "Petr",
     surname: "Petrov",
     address: {
         country: "USA",
-        city: "LA"
+        city: "Bobryisk"
     }
 };
 
-let newPassportWithAddress = structuredClone(passportWithAddress);
+let newProperty = {married: true};
+let passportMarried2 = {};
 
-newPassportWithAddress.address.city = "Bobryisk";
+for (let key of ['name', 'surname']){
+    passportMarried2[key] = passportMarried[key];
+}
 
-console.log(passportWithAddress.address.city);
-console.log(newPassportWithAddress.address.city);
+passportMarried2 = {...passportMarried2, ...newProperty};
+
+for (let key of ["address"]){
+    passportMarried2[key] = passportMarried[key];
+}
+
+console.log(passportMarried);
+console.log(passportMarried2);
+
