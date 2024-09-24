@@ -4,14 +4,11 @@ const numbers = [
     [111, 200, 333, 400, 555],
 ];
 
-numbers.forEach((numArray) => {
-    numArray.forEach((num, index) => {
-        numArray.filter((num) => {
-            if (num % 2 != 0) {
-                return num;
-            }
-        });
-        numArray.splice(index, 1);
+numbers.forEach((numArray, index) => {
+    numbers[index] = numArray.filter((num) => {
+        if (num % 2 === 0) {
+            return num;
+        }
     });
 });
 
